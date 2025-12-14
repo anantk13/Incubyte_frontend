@@ -1,0 +1,210 @@
+/**
+ * Sweet Card Styles
+ */
+
+.sweet-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sweet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.sweet-card.out-of-stock-card {
+    opacity: 0.7;
+    background: #f5f5f5;
+}
+
+/* Sweet Icon */
+.sweet-icon {
+    font-size: 80px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Sweet Details */
+.sweet-details {
+    flex: 1;
+}
+
+.sweet-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.sweet-category {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.sweet-description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.sweet-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.sweet-price {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sweet-stock {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.sweet-stock.in-stock {
+    background: #d4edda;
+    color: #155724;
+}
+
+.sweet-stock.low-stock {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.sweet-stock.out-of-stock {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Actions */
+.sweet-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-purchase {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-purchase:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-purchase:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.spinner-small {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.login-hint {
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Alert in Card */
+.sweet-actions .alert {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    text-align: center;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-error {
+    background: #fee;
+    color: #c33;
+    border: 1px solid #fcc;
+}
+
+.alert-success {
+    background: #efe;
+    color: #3c3;
+    border: 1px solid #cfc;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .sweet-card {
+        padding: 20px;
+    }
+
+    .sweet-icon {
+        font-size: 60px;
+    }
+
+    .sweet-name {
+        font-size: 20px;
+    }
+
+    .sweet-price {
+        font-size: 24px;
+    }
+}
